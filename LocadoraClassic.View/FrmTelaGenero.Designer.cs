@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dgvGeneros = new System.Windows.Forms.DataGridView();
             this.excluirBnt = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             // 
             // excluirBnt
             // 
-            this.excluirBnt.Location = new System.Drawing.Point(488, 80);
+            this.excluirBnt.Location = new System.Drawing.Point(344, 80);
             this.excluirBnt.Name = "excluirBnt";
             this.excluirBnt.Size = new System.Drawing.Size(116, 23);
             this.excluirBnt.TabIndex = 4;
@@ -84,11 +85,22 @@
             this.excluirBnt.UseVisualStyleBackColor = true;
             this.excluirBnt.Click += new System.EventHandler(this.excluirBnt_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(480, 80);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(130, 23);
+            this.btnEditar.TabIndex = 5;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // FrmTelaGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.excluirBnt);
             this.Controls.Add(this.dgvGeneros);
             this.Controls.Add(this.button1);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvGeneros;
         private System.Windows.Forms.Button excluirBnt;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

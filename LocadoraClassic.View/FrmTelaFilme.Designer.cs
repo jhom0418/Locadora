@@ -36,10 +36,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtSinopse = new System.Windows.Forms.TextBox();
+            this.checkBox = new System.Windows.Forms.CheckBox();
+            this.txtDuracao = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,6 +106,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(356, 21);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -115,39 +116,41 @@
             this.comboBox2.Size = new System.Drawing.Size(358, 21);
             this.comboBox2.TabIndex = 8;
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtNome.Location = new System.Drawing.Point(61, 150);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(356, 20);
+            this.txtNome.TabIndex = 9;
+            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox3
+            // txtSinopse
             // 
-            this.textBox3.Location = new System.Drawing.Point(59, 258);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 90);
-            this.textBox3.TabIndex = 11;
+            this.txtSinopse.Location = new System.Drawing.Point(59, 258);
+            this.txtSinopse.Multiline = true;
+            this.txtSinopse.Name = "txtSinopse";
+            this.txtSinopse.Size = new System.Drawing.Size(358, 90);
+            this.txtSinopse.TabIndex = 11;
             // 
-            // checkBox1
+            // checkBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(59, 364);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(62, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Locado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox.AutoSize = true;
+            this.checkBox.Location = new System.Drawing.Point(59, 364);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(62, 17);
+            this.checkBox.TabIndex = 12;
+            this.checkBox.Text = "Locado";
+            this.checkBox.UseVisualStyleBackColor = true;
+            this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
-            // maskedTextBox1
+            // txtDuracao
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(61, 193);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(356, 20);
-            this.maskedTextBox1.TabIndex = 13;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtDuracao.Location = new System.Drawing.Point(61, 193);
+            this.txtDuracao.Mask = "90:00";
+            this.txtDuracao.Name = "txtDuracao";
+            this.txtDuracao.Size = new System.Drawing.Size(356, 20);
+            this.txtDuracao.TabIndex = 13;
+            this.txtDuracao.ValidatingType = typeof(System.DateTime);
             // 
             // pictureBox1
             // 
@@ -165,6 +168,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmTelaFilme
             // 
@@ -173,10 +177,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDuracao);
+            this.Controls.Add(this.checkBox);
+            this.Controls.Add(this.txtSinopse);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
@@ -204,10 +208,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtSinopse;
+        private System.Windows.Forms.CheckBox checkBox;
+        private System.Windows.Forms.MaskedTextBox txtDuracao;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
     }

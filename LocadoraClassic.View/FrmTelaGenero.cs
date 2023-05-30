@@ -8,10 +8,13 @@ namespace LocadoraClassic.View
 {
     public partial class FrmTelaGenero : Form
     {
+        Genero genero = new Genero();
+        int id = 0;
         GeneroDAL generoDAL = new GeneroDAL();
         public FrmTelaGenero()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -74,5 +77,48 @@ namespace LocadoraClassic.View
             CarregarGrid();
 
         }
+
+        private void dgvGeneros_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Obtém a linha em que ocorreu o duplo clique
+                DataGridViewRow row = dgvGeneros.Rows[e.RowIndex];
+
+                // Seleciona a linha inteira
+                row.Selected = true;
+            }
+
+            //ETAPA 1 - SELECIONAR O ID DA TABELA
+
+            // Verifica se há alguma linha selecionada no DataGridView
+            if (dgvGeneros.SelectedRows.Count > 0)
+            {
+                // Obtém a linha selecionada
+                DataGridViewRow selectedRow = dgvGeneros.SelectedRows[0];
+
+                // Obtém o valor do campo "id" da célula selecionada
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                string nome = selectedRow.Cells["nome"].Value.ToString();
+                txtGenero.Text = nome;
+                // Faça o que precisar com o valor do campo "id"
+                // Por exemplo, exiba-o em uma caixa de diálogo
+
+
+            }
+        }
+
+
+            
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            genero.Nome = txtGenero.Text;
+            genero.Id = id;
+            generoDAL.AtualizarGenero(genero);
+            txtGenero.Text = "";
+            CarregarGrid();
+
+        }    
     }
 }

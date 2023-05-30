@@ -42,10 +42,10 @@ namespace LocadoraClassic.DAL
                 Cliente cliente = new Cliente();
                 cliente.id = Convert.ToInt32(reader["id"]);
                 cliente.nome = reader["nome"].ToString();
-                cliente.nome = reader["endereco"].ToString();
-                cliente.nome = reader["telefone"].ToString();
-                cliente.nome = reader["cpf"].ToString();
-                cliente.nome = reader["rg"].ToString();
+                cliente.endereco = reader["endereco"].ToString();
+                cliente.telefone = reader["telefone"].ToString();
+                cliente.cpf = reader["cpf"].ToString();
+                cliente.rg = reader["rg"].ToString();
                 clientes.Add(cliente);
             }
             // Fechar a conexão e retornar os gêneros obtidos
